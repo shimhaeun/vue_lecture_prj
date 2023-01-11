@@ -1,22 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import HomeView from '../views/HomeView.vue'
+
+// main_page와 sub_page 컴포넌트 모듈 가져오기
 import MainPage from '../components/main_page'
+import SubPage from '../components/sub_page'
 
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/main',
     name: 'main_page',
     component: MainPage
   },
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: HomeView
-  // },
+  {
+    path: '/sub',
+    name: 'sub_page',
+    component: SubPage
+  },
   {
     path: '/about',
     name: 'about',
@@ -33,4 +35,16 @@ const router = new VueRouter({
   routes
 })
 
+// const routes : [
+//   {
+//     // 첫 루트 페이지는 main_page로 설정
+//     path:'/', name:'home', component: main_page
+//   },
+//   {
+//     path:'/main', name:'main_page', component: MainPage
+//   },
+//   {
+//     path:'/sub', name:'sub_page', component: SubPage
+//   }
+// ]
 export default router
